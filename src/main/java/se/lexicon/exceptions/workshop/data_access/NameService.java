@@ -91,7 +91,7 @@ public class NameService {
         if (maleFirstNames.contains(name)) throw new DuplicateNameException("Name exists in database");
         else {
             maleFirstNames.add(name);
-            CSVReader_Writer.saveMaleFirstName(maleFirstNames);
+            CSVReader_Writer.saveMaleNames(maleFirstNames);
         }
     }
 
@@ -103,8 +103,8 @@ public class NameService {
      * @param lastName
      */
     public void addLastName(String lastName) {
-        if (name == null) throw new IllegalStateException("Name cannot be null");
-        if (lastNames.contains(name)) throw new DuplicateNameException("Lastname exists in database");
+        if (lastName == null) throw new IllegalStateException("Name cannot be null");
+        if (lastNames.contains(lastName)) throw new DuplicateNameException("Lastname exists in database");
         else {
             lastNames.add(lastName);
             CSVReader_Writer.saveLastNames(lastNames);
